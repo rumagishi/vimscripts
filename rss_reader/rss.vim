@@ -7,7 +7,14 @@ while index < max
     let index = index + 1
 endwhile
 
-let line = "見たい記事を選んでください => "
-let choice = input(line)
-echo "\n"
-echo system("open " . result[choice].link)
+while 1
+    let line = "見たい記事を選んでください => "
+    let number = input(line)
+    if number == 'q'
+        echo 'quit'
+        break
+    else
+        echo "\n"
+        echo system("open " . result[number].link)
+    endif
+endwhile
